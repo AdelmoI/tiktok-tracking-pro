@@ -1,0 +1,256 @@
+/* TikTok Tracking Pro - Admin Styles */
+
+.ttp-admin-container {
+    max-width: 800px;
+}
+
+.ttp-status-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.ttp-status-card h3 {
+    margin-top: 0;
+    color: #333;
+    font-size: 16px;
+}
+
+.ttp-status-ok {
+    color: #46b450;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ttp-status-ok .dashicons {
+    color: #46b450;
+}
+
+.ttp-status-warning {
+    color: #ffb900;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ttp-status-warning .dashicons {
+    color: #ffb900;
+}
+
+/* Switch Toggle */
+.ttp-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.ttp-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.ttp-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.ttp-slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+input:checked + .ttp-slider {
+    background-color: #ff0050; /* TikTok brand color */
+}
+
+input:checked + .ttp-slider:before {
+    transform: translateX(26px);
+}
+
+.ttp-slider:hover {
+    background-color: #bbb;
+}
+
+input:checked + .ttp-slider:hover {
+    background-color: #e6004a;
+}
+
+/* Sections */
+.ttp-test-section,
+.ttp-info-section {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.ttp-test-section h3,
+.ttp-info-section h3 {
+    margin-top: 0;
+    color: #333;
+    font-size: 16px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.ttp-info-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.ttp-info-table td {
+    padding: 8px 0;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.ttp-info-table td:first-child {
+    width: 30%;
+    color: #666;
+}
+
+/* Form Elements */
+.ttp-show-password {
+    margin-left: 10px;
+    height: 28px;
+    line-height: 26px;
+    font-size: 12px;
+}
+
+/* Links */
+.ttp-admin-container a {
+    color: #ff0050;
+    text-decoration: none;
+}
+
+.ttp-admin-container a:hover {
+    color: #e6004a;
+    text-decoration: underline;
+}
+
+/* Form Descriptions */
+.ttp-admin-container .description {
+    color: #666;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+/* Test Connection Button */
+.ttp-test-section .button {
+    background-color: #ff0050;
+    border-color: #ff0050;
+    color: white;
+    text-shadow: none;
+    box-shadow: none;
+    transition: all 0.2s;
+}
+
+.ttp-test-section .button:hover {
+    background-color: #e6004a;
+    border-color: #e6004a;
+    color: white;
+}
+
+/* Notice Styles */
+.ttp-admin-container .notice {
+    margin: 15px 0;
+    padding: 12px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .ttp-admin-container {
+        max-width: 100%;
+        margin: 0 10px;
+    }
+    
+    .ttp-status-card,
+    .ttp-test-section,
+    .ttp-info-section {
+        margin: 15px 0;
+        padding: 15px;
+    }
+    
+    .ttp-info-table td:first-child {
+        width: 40%;
+        font-size: 14px;
+    }
+}
+
+/* Loading State */
+.ttp-loading {
+    opacity: 0.6;
+    pointer-events: none;
+    position: relative;
+}
+
+.ttp-loading:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    margin-left: -10px;
+    border: 2px solid #ff0050;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: ttp-spin 1s linear infinite;
+}
+
+@keyframes ttp-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Success/Error Messages */
+.ttp-message {
+    padding: 10px 15px;
+    border-radius: 4px;
+    margin: 10px 0;
+    font-weight: 500;
+}
+
+.ttp-message.success {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+}
+
+.ttp-message.error {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+}
+
+.ttp-message.warning {
+    background-color: #fff3cd;
+    border: 1px solid #ffeaa7;
+    color: #856404;
+}
